@@ -1,0 +1,33 @@
+{
+  "name": "classified",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack:osx": "electron-packager . repl.it --out=../dist/osx --platform=darwin --arch=x64 --overwrite",
+    "pack:win32": "electron-packager . repl.it --out=../dist/win --platform=win32 --arch=ia32 --icon=icons/icon.ico --overwrite",
+    "pack:win64": "electron-packager . repl.it --out=../dist/win --platform=win32 --arch=x64 app-version=1.1 --icon=icons/icon.ico --overwrite",
+    "build": "npm run pack:win64 && npm run pack:win32 && npm run pack:osx"
+  },
+  "build": {
+    "files": [
+      "icons/*"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "discord-rich-presence": "0.0.8",
+    "electron-settings": "^3.2.0",
+    "express": "^4.17.1",
+    "uuid": "^7.0.3",
+    "ws": "^7.2.3"
+  }
+}
